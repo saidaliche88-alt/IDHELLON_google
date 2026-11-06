@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b20">
+<title>IDHELon Google — Site personnel</title>
+<style>
+:root{--bg:#080b20;--panel:rgba(20,26,61,.72);--text:#f5f7ff;--muted:#b4bddb;--cyan:#42e8ff;--pink:#ff4fd8;--violet:#9270ff;--line:rgba(255,255,255,.13)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--text);background:radial-gradient(ellipse at 15% 10%,rgba(91,65,255,.28),transparent 35%),radial-gradient(ellipse at 85% 25%,rgba(0,216,255,.17),transparent 32%),var(--bg);min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto;position:relative}
+header{display:flex;align-items:center;justify-content:space-between;padding:24px 0}.brand{font-weight:900;letter-spacing:.04em;font-size:1.15rem}.brand span{background:linear-gradient(90deg,var(--cyan),var(--pink));background-clip:text;color:transparent}
+nav{display:flex;gap:24px;color:var(--muted);font-size:.92rem}nav a:hover{color:white}
+.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px}
+.hero{padding:92px 0 76px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.05);border-radius:999px;padding:8px 13px;color:var(--cyan);font-size:.82rem}
+.dot{width:8px;height:8px;background:#4dffb5;border-radius:50%;box-shadow:0 0 12px #4dffb5}
+h1{font-size:clamp(3rem,7vw,5.7rem);line-height:.98;letter-spacing:-.065em;margin:24px 0 18px}h1 em{font-style:normal;background:linear-gradient(90deg,var(--cyan),#a88aff,var(--pink));background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:1.12rem;line-height:1.75;max-width:590px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:13px;padding:13px 19px;font-weight:750;cursor:pointer;transition:.2s}.primary{color:#071020;background:linear-gradient(100deg,var(--cyan),#b2a0ff,var(--pink));box-shadow:0 8px 30px #7c6aff35}.secondary{background:rgba(255,255,255,.06);color:white;border:1px solid var(--line)}.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.orbit{width:min(310px,70vw);aspect-ratio:1;margin:auto;border-radius:50%;border:1px solid #ffffff25;display:grid;place-items:center;position:relative;box-shadow:0 0 80px #715cff30,inset 0 0 60px #715cff18}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #ffffff22;border-radius:50%;inset:13%}.orbit:after{inset:27%;border-color:#42e8ff55}.core{width:37%;aspect-ratio:1;border-radius:28%;display:grid;place-items:center;font-size:3rem;font-weight:950;background:linear-gradient(135deg,#42e8ff,#9270ff 55%,#ff4fd8);box-shadow:0 0 65px #9270ff88;transform:rotate(-12deg)}.orb{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--cyan);box-shadow:0 0 20px var(--cyan)}.orb.one{top:15%;left:20%}.orb.two{right:8%;top:48%;background:var(--pink);box-shadow:0 0 20px var(--pink)}.orb.three{bottom:13%;left:27%;background:#a88aff}
+section{padding:55px 0}.section-title{font-size:2rem;letter-spacing:-.04em;margin:0 0 12px}.section-sub{color:var(--muted);line-height:1.7;margin:0 0 25px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{padding:23px;border:1px solid var(--line);border-radius:19px;background:var(--panel);backdrop-filter:blur(12px);min-height:170px}.icon{font-size:1.7rem}.card h3{margin:14px 0 8px}.card p{color:var(--muted);line-height:1.6;margin:0;font-size:.95rem}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:stretch}.aboutbox{border:1px solid var(--line);border-radius:20px;padding:25px;background:linear-gradient(145deg,#24275a99,#10142eaa)}.aboutbox p{color:var(--muted);line-height:1.8}
+.contact{border:1px solid #8c7aff55;border-radius:23px;padding:30px;background:linear-gradient(120deg,#29235b99,#102c48aa);display:flex;align-items:center;justify-content:space-between;gap:20px}.contact p{color:var(--muted);margin-bottom:0}
+footer{padding:30px 0 40px;color:#929bbd;border-top:1px solid var(--line);font-size:.88rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:65px 0 45px}.orbit{width:220px;grid-row:1}.cards{grid-template-columns:1fr}.about{grid-template-columns:1fr}nav{display:none;position:absolute;right:0;top:65px;z-index:5;padding:16px;background:#141936;border:1px solid var(--line);border-radius:14px;flex-direction:column;gap:15px}nav.open{display:flex}.menu{display:block}.contact{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="#accueil">IDHELon <span>Google</span></a>
+  <nav id="nav"><a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#projets">Mes espaces</a><a href="#contact">Contact</a></nav>
+  <button class="menu" id="menu" aria-label="Ouvrir le menu">☰</button>
+</header>
+<main>
+<section class="hero" id="accueil">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> Bienvenue dans mon univers</div>
+    <h1>Bienvenue sur<br><em>IDHELon Google.</em></h1>
+    <p class="lead">Un espace personnel, créatif et futuriste. Découvre mes idées, mes projets et tout ce que j'ai envie de partager.</p>
+    <div class="actions"><a class="btn primary" href="#apropos">Découvrir le site ↗</a><a class="btn secondary" href="#contact">Me contacter</a></div>
+  </div>
+  <div class="orbit" aria-label="Illustration futuriste"><span class="orb one"></span><span class="orb two"></span><span class="orb three"></span><div class="core">I</div></div>
+</section>
+<section id="apropos">
+  <h2 class="section-title">Un peu à propos de moi</h2>
+  <p class="section-sub">Un petit coin du web qui me ressemble.</p>
+  <div class="about">
+    <div class="aboutbox"><div class="icon">🌌</div><h3>Mon univers</h3><p>Bienvenue ! Ce site est mon espace personnel. Je pourrai y présenter mes passions, mes idées et mes nouveautés.</p></div>
+    <div class="aboutbox"><div class="icon">✨</div><h3>Qui suis-je ?</h3><p>Ajoute ici quelques lignes sur toi : ton prénom ou pseudo, ce que tu aimes, tes objectifs et ce qui te rend unique. Tu peux modifier ce texte directement dans le fichier du site.</p></div>
+  </div>
+</section>
+<section id="projets">
+  <h2 class="section-title">Mes espaces</h2>
+  <p class="section-sub">Trois rubriques pour commencer. Tu peux les personnaliser selon tes envies.</p>
+  <div class="cards">
+    <article class="card"><div class="icon">🚀</div><h3>Mes projets</h3><p>Présente ici tes créations, tes idées et les choses que tu construis.</p></article>
+    <article class="card"><div class="icon">🎮</div><h3>Mes passions</h3><p>Parle de tes loisirs, de tes jeux préférés, du sport ou de la musique.</p></article>
+    <article class="card"><div class="icon">📸</div><h3>Ma galerie</h3><p>Ajoute tes photos, tes dessins ou tes meilleurs souvenirs.</p></article>
+  </div>
+</section>
+<section id="contact">
+  <div class="contact"><div><h2 class="section-title">On reste en contact ?</h2><p>Ajoute ton adresse e-mail ou un lien vers ton réseau social.</p></div><a class="btn primary" href="mailto:bonjour@example.com?subject=Bonjour%20IDHELon%20Google">M'envoyer un e-mail ↗</a></div>
+</section>
+</main>
+<footer><span>© <span id="year"></span> IDHELon Google</span><span>Imaginé avec ✦ et un peu de futurisme</span></footer>
+</div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+</script>
+</body>
+</html>
